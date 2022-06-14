@@ -21,8 +21,10 @@ use bevy_app::{PluginGroup, PluginGroupBuilder};
 /// * [`WinitPlugin`](bevy_winit::WinitPlugin) - with feature `bevy_winit`
 ///
 /// See also [`MinimalPlugins`] for a slimmed down option
+#[cfg(not(target = "wasm32-wasi"))]
 pub struct DefaultPlugins;
 
+#[cfg(not(target = "wasm32-wasi"))]
 impl PluginGroup for DefaultPlugins {
     fn build(&mut self, group: &mut PluginGroupBuilder) {
         group.add(bevy_log::LogPlugin::default());
@@ -33,6 +35,7 @@ impl PluginGroup for DefaultPlugins {
         group.add(bevy_input::InputPlugin::default());
         group.add(bevy_window::WindowPlugin::default());
         group.add(bevy_asset::AssetPlugin::default());
+
         #[cfg(feature = "debug_asset_server")]
         group.add(bevy_asset::debug_asset_server::DebugAssetServerPlugin::default());
         group.add(bevy_scene::ScenePlugin::default());

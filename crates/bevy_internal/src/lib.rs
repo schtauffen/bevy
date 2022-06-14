@@ -7,46 +7,55 @@ pub mod prelude;
 mod default_plugins;
 pub use default_plugins::*;
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod app {
     //! Build bevy apps, create plugins, and read events.
     pub use bevy_app::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod asset {
     //! Load and store assets and resources for Apps.
     pub use bevy_asset::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod core {
     //! Contains core plugins and utilities for time.
     pub use bevy_core::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod diagnostic {
     //! Useful diagnostic plugins and types for bevy apps.
     pub use bevy_diagnostic::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod ecs {
     //! Bevy's entity-component-system.
     pub use bevy_ecs::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod input {
     //! Resources and events for inputs, e.g. mouse/keyboard, touch, gamepads, etc.
     pub use bevy_input::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod log {
     //! Logging capabilities
     pub use bevy_log::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod math {
     //! Math types (Vec3, Mat4, Quat, etc) and helpers.
     pub use bevy_math::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod reflect {
     // TODO: remove these renames once TypeRegistryArc is no longer required
     //! Type reflection used for dynamically interacting with rust types.
@@ -55,31 +64,37 @@ pub mod reflect {
     };
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod scene {
     //! Save/load collections of entities and components to/from file.
     pub use bevy_scene::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod tasks {
     //! Pools for async, IO, and compute tasks.
     pub use bevy_tasks::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod hierarchy {
     //! Entity hierarchies and property inheritance
     pub use bevy_hierarchy::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod transform {
     //! Local and global transforms (e.g. translation, scale, rotation).
     pub use bevy_transform::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod utils {
     //! Various miscellaneous utilities for easing development
     pub use bevy_utils::*;
 }
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub mod window {
     //! Configuration, creation, and management of one or more windows.
     pub use bevy_window::*;

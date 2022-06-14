@@ -1,10 +1,12 @@
 #[doc(hidden)]
+#[cfg(not(target = "wasm32-wasi"))]
 pub use crate::{
     app::prelude::*, asset::prelude::*, core::prelude::*, ecs::prelude::*, hierarchy::prelude::*,
     input::prelude::*, log::prelude::*, math::prelude::*, reflect::prelude::*, scene::prelude::*,
     transform::prelude::*, utils::prelude::*, window::prelude::*, DefaultPlugins, MinimalPlugins,
 };
 
+#[cfg(not(target = "wasm32-wasi"))]
 pub use bevy_derive::{bevy_main, Deref, DerefMut};
 
 #[doc(hidden)]
