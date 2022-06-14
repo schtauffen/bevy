@@ -1,7 +1,3 @@
-pub fn foo() {
-    println!("FOO");
-}
-
 // #[doc(hidden)]
 // #[cfg(not(target = "wasm32-wasi"))]
 // pub use crate::{

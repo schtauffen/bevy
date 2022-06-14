@@ -4,8 +4,8 @@
 /// `use bevy::prelude::*;` to import common components, bundles, and plugins.
 pub mod prelude;
 
-// mod default_plugins;
-// pub use default_plugins::*;
+mod default_plugins;
+pub use default_plugins::*;
 
 // #[cfg(not(target = "wasm32-wasi"))]
 // pub mod app {
